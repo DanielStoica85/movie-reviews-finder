@@ -4,8 +4,8 @@ class NYTimes {
     }
 
     async getReviews(movieTitle) {
-        
-        const response = await fetch (`https://api.nytimes.com/svc/movies/v2/reviews/search.json?api-key=${this.apikey}&query=${movieTitle}`);
+
+        const response = await fetch(`https://api.nytimes.com/svc/movies/v2/reviews/search.json?api-key=${this.apikey}&query=${movieTitle}`);
 
         const reviews = await response.json();
 

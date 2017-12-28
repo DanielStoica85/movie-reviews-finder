@@ -6,8 +6,7 @@ class UI {
     showReviews(results) {
 
         let output = '';
-        console.log('Results found: ', results.length);
-        results.forEach(function(result) {
+        results.forEach(function (result) {
             // check if movie image exists
             if (result.multimedia) {
                 output += `
@@ -26,14 +25,13 @@ class UI {
                                 <li class="list-group-item">Title: ${result.display_title}</li>
                                 <li class="list-group-item">Headline: ${result.headline}</li>
                                 <li class="list-group-item">Summary: ${result.summary_short}</li>
-                                <li class="list-group-item"><a href="${result.link.url}">Read the New York Times Review of "${result.display_title}"...</a></li>
+                                <li class="list-group-item"><a href="${result.link.url}" target="_blank">Read the New York Times Review of "${result.display_title}"...</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 `
-            }
-            else {
+            } else {
                 output += `
                 <div class="card card-body mb-3">
                     <div class="row">
@@ -50,13 +48,13 @@ class UI {
                                 <li class="list-group-item">Title: ${result.display_title}</li>
                                 <li class="list-group-item">Headline: ${result.headline}</li>
                                 <li class="list-group-item">Summary: ${result.summary_short}</li>
-                                <li class="list-group-item"><a href="${result.link.url}">Read the New York Times Review of "${result.display_title}"...</a></li>
+                                <li class="list-group-item"><a href="${result.link.url}" target="_blank">Read the New York Times Review of "${result.display_title}"...</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 `
-            }          
+            }
         });
 
         this.clearReviews();
@@ -75,8 +73,8 @@ class UI {
         // Add text inside div
         div.appendChild(document.createTextNode(message));
         // Get parent and neighbor
-        const container = document.querySelector('.searchContainer');  // parent
-        const search = document.querySelector('.search');  // search box
+        const container = document.querySelector('.searchContainer'); // parent
+        const search = document.querySelector('.search'); // search box
         // Insert div
         container.insertBefore(div, search);
 
